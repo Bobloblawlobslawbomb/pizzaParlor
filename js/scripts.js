@@ -19,7 +19,7 @@ function Pizza(toppings, size) {
 
 Pizza.prototype.price = function () {
   let price = 0;
-  price = this.size * this.toppings.length; //.val() may be a quick answer here
+  price = this.size * this.toppings; //.val() may be a quick answer here
   return price;
 };
 
@@ -33,7 +33,7 @@ $(document).ready(function () {
   let userPizzaSize
   $("#form-one").submit(function (e) {
     e.preventDefault();
-    userPizzaToppings = $("#radio-one-div input[type='radio']:checked");//maybe parstInt here or .val()
+    userPizzaToppings = parseInt($("#radio-one-div input[type='radio']:checked"));//maybe parstInt here or .val()
     //console.log(userPizzaToppings.val())//this console logs a 3 --getting there...
     $("#form-two").slideDown();
     $("#form-one").slideUp();
@@ -44,8 +44,8 @@ $(document).ready(function () {
     $("#results").slideDown();
     $("#form-two").slideUp();
   })
-  const userPizzaOne = new Pizza(userPizzaToppings, userPizzaSize)
-  //const pizzaOne = new Pizza(["mushrooms", "sausage"], 3);//sample pizza
-  //$("#price-place").html(pizzaOne.price())
-  $("#price-place").html(userPizzaOne.price())
+  //const userPizzaOne = new Pizza(userPizzaToppings, userPizzaSize)
+  const pizzaOne = new Pizza(["mushrooms", "sausage"], 3);//sample pizza
+  $("#price-place").html(pizzaOne.price())
+  //$("#price-place").html(userPizzaOne.price())
 })
