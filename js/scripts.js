@@ -8,11 +8,11 @@ function Pizza(toppings, size) {
 // function Pizza(toppings, size, amountOfToppings) {
 //   this.toppings = toppings;
 //   this.size = size;
-//   this.amountOfToppings = 
+//   this.amountOfToppings = amountOfToppings;
 // }
 
 // Pizza.prototype.addAmountOfToppings = function(amountOfToppings){
-// this.amountOfToppings =amountOfToppings;
+// this.amountOfToppings = amountOfToppings;
 // }
 
 // //WIP
@@ -34,6 +34,7 @@ $(document).ready(function () {
   $("#form-one").submit(function (e) {
     e.preventDefault();
     userPizzaToppings = $("#radio-one-div input[type='radio']:checked");//maybe parstInt here or .val()
+    //console.log(userPizzaToppings.val())//this console logs a 3 --getting there...
     $("#form-two").slideDown();
     $("#form-one").slideUp();
   })
