@@ -10,7 +10,7 @@ Pizza.prototype.price = function () {
   return price;
 };
 
-//const pizzaOne = new Pizza(["mushrooms", "sausage"], 3);//sample pizza
+
 
 
 
@@ -32,5 +32,6 @@ $(document).ready(function () {
   })
   const userPizzaOne = new Pizza(userPizzaToppings, userPizzaSize)
   //const pizzaOne = new Pizza(["mushrooms", "sausage"], 3);//sample pizza
+  //$("#price-place").html(pizzaOne.price())
   $("#price-place").html(userPizzaOne.price())
 })
