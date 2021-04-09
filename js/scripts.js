@@ -6,5 +6,7 @@ function Pizza(size, toppings) {
 let pizzaOne = new Pizza(3, ["mushrooms", "sausage"]);
 
 Pizza.prototype.price = function () {
-  return this.size * (this.toppings.length + 1);
+  let price = 0;
+  price = this.size * (this.toppings.length);
+  return price;
 };
