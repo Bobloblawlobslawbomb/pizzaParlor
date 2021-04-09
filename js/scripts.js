@@ -4,13 +4,13 @@ function Pizza(size, toppings) {
   this.toppings = toppings;
 }
 
-let pizzaOne = new Pizza(3, ["mushrooms", "sausage"]);
-
 Pizza.prototype.price = function () {
   let price = 0;
   price = this.size * (this.toppings.length);
   return price;
 };
+
+const pizzaOne = new Pizza(3, ["mushrooms", "sausage"]);//sample pizza
 
 
 //SAMPLE USER INTERFACE LOGIC
@@ -23,3 +23,10 @@ $(document).ready(function () {
 })
 
 //USER INTERFACE LOGIC
+$(document).ready(function () {
+  $("#NAMEOFOFORM").submit(function (e) {
+    e.preventDefault();
+    const personPizza = $('input#userNum').val()
+    $("#result").html(personPizza.price())
+  })
+})
