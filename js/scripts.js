@@ -1,30 +1,18 @@
 // BUSINESS LOGIC
-function Pizza(size, toppings) {
-  this.size = size;
+function Pizza(toppings, size) {
   this.toppings = toppings;
+  this.size = size;
 }
 
 Pizza.prototype.price = function () {
   let price = 0;
-  price = this.size * (this.toppings.length);
+  price = this.size * this.toppings.length;
   return price;
 };
 
-const pizzaOne = new Pizza(3, ["mushrooms", "sausage"]);//sample pizza
+//const pizzaOne = new Pizza(["mushrooms", "sausage"], 3);//sample pizza
 
 
-//SAMPLE USER INTERFACE LOGIC
-$(document).ready(function () {
-  $("#NAMEOFOFORM").submit(function (e) {
-    e.preventDefault();
-    const personInput = $('input#userNum').val()
-    $("#result").html(beepBoop(personInput))//see next comment for sample WIP
-  })
-})
-/*
-//const personPizza = $('input#userNum').val()
-$("#result").html(personPizza.price())
-*/
 
 //USER INTERFACE LOGIC
 $(document).ready(function () {
@@ -36,4 +24,13 @@ $(document).ready(function () {
     $("#form-two").slideDown();
     $("#form-one").slideUp();
   })
+  $("#form-two").submit(function (e) {
+    e.preventDefault();
+    userPizzaSize = parseInt($("#radio-two-div input[type='radio']:checked"));
+    $("#results").slideDown();
+    $("#form-two").slideUp();
+  })
+  const userPizzaOne = new Pizza(userPizzaToppings, userPizzaSize)
+  //const pizzaOne = new Pizza(["mushrooms", "sausage"], 3);//sample pizza
+  $("#price-place").html(userPizzaOne.price())
 })
