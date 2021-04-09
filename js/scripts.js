@@ -4,9 +4,22 @@ function Pizza(toppings, size) {
   this.size = size;
 }
 
+// //WIP
+// function Pizza(toppings, size, amountOfToppings) {
+//   this.toppings = toppings;
+//   this.size = size;
+//   this.amountOfToppings = 
+// }
+
+// Pizza.prototype.addAmountOfToppings = function(amountOfToppings){
+// this.amountOfToppings =amountOfToppings;
+// }
+
+// //WIP
+
 Pizza.prototype.price = function () {
   let price = 0;
-  price = this.size * this.toppings.length;
+  price = this.size * this.toppings.length; //.val() may be a quick answer here
   return price;
 };
 
@@ -20,7 +33,7 @@ $(document).ready(function () {
   let userPizzaSize
   $("#form-one").submit(function (e) {
     e.preventDefault();
-    userPizzaToppings = $("#radio-one-div input[type='radio']:checked");
+    userPizzaToppings = $("#radio-one-div input[type='radio']:checked");//maybe parstInt here or .val()
     $("#form-two").slideDown();
     $("#form-one").slideUp();
   })
