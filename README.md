@@ -31,15 +31,17 @@ _This program presents the user with two groupings of radio buttons. The first s
 6. The page will then display another set of radio boxes which allow the user to select a size for their pizza.
 7. Once the user has made their selection and pressed the new button labeled "Gimmie a Price". The user is presented with the price of their pizza using the formula: (price = this.size * this.amountOfTopppings ('this' refers to the users information pizza))
 
-## Known Bugs
+## Known Bugs:
 
-* _User is only able to get one topping on their pizza (but honestly it's my pizzaria, this is just how we make them here)_
+1. _User is only able to get one topping on their pizza (but honestly it's my pizzaria, this is just how we make them here)_ 
+
+>* note: 'checkboxes' branch has recently been updated with a WIP: checkboxes solution but currently that pizzaria only serves pepperoni pizza.
 
 ## Planned update(s)
 
-* allow the user to order more than one topping on their pizza -- either with new forms or via a different selection type, possibly checkboxes.
+1. Allow the user to order more than one topping on their pizza. Either with new forms or via a different selection type, possibly checkboxes. --_see note above_
 
-* recalculate prices of individual toppings to be more varied
+2. Recalculate prices of individual toppings to be more varied
 
 # Tests/Specs:
 
