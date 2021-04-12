@@ -13,6 +13,6 @@ body{
 }
 
 
-#form-two{
+#form-two, #results{
   display: none;
 }
