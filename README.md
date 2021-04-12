@@ -66,7 +66,6 @@ Expected Output:
 Photo by: Ivan Torres https://unsplash.com/photos/MQUqbmszGGM
 On unsplash.com
 
-
 ## License [GPL] (https://choosealicense.com/licenses/gpl-3.0/)
 
 _if you do run into any issues or have questions, ideas, or concerns; I would greatly encourage you to send feedback or make a contribution to the code_
