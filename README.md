@@ -2,13 +2,13 @@
 
 _function Pizza_
 Describe: function Pizza
-"a constructor function to make pizza objects" 
+"a constructor function to make pizza objects with properties of: toppings, size, amountOfToppings" 
 Test: it will make a pizza object
 Code:
 > const pizzaOne = new Pizza(["mushrooms","olives"],3);
 >pizzaOne
 Expected Output: 
-Pizza {toppings: Array(2), size: 3}
+Pizza {toppings: Array(2), size: 3, amountOfToppings: 2}
 
 _Pizza.prototype.price()_
 Describe: Pizza.prototype.price()
