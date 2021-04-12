@@ -1,51 +1,30 @@
-// BUSINESS LOGIC
 function Pizza(toppings, size) {
   this.toppings = toppings;
   this.size = size;
+  this.amountOfToppings = toppings.length;
 }
-
-// //WIP
-// function Pizza(toppings, size, amountOfToppings) {
-//   this.toppings = toppings;
-//   this.size = size;
-//   this.amountOfToppings = amountOfToppings;
-// }
-
-// Pizza.prototype.addAmountOfToppings = function(amountOfToppings){
-// this.amountOfToppings = amountOfToppings;
-// }
-
-// //WIP
 
 Pizza.prototype.price = function () {
   let price = 0;
-  price = this.size * this.toppings; //.val() may be a quick answer here
+  price = this.size * this.amountOfToppings;
   return price;
 };
 
-
-
-
-
-//USER INTERFACE LOGIC
 $(document).ready(function () {
   let userPizzaToppings
   let userPizzaSize
   $("#form-one").submit(function (e) {
     e.preventDefault();
-    userPizzaToppings = parseInt($("#radio-one-div input[type='radio']:checked"));//maybe parstInt here or .val()
-    //console.log(userPizzaToppings.val())//this console logs a 3 --getting there...
+    userPizzaToppings = $("#radio-one-div input[type='radio']:checked").val();
     $("#form-two").slideDown();
     $("#form-one").slideUp();
   })
   $("#form-two").submit(function (e) {
     e.preventDefault();
-    userPizzaSize = parseInt($("#radio-two-div input[type='radio']:checked"));
+    userPizzaSize = $("#radio-two-div input[type='radio']:checked").val();
     $("#results").slideDown();
+    const userPizzaOne = new Pizza(userPizzaToppings, userPizzaSize);
+    $("#price-place").html("$" + userPizzaOne.price() + ".99");
     $("#form-two").slideUp();
   })
-  //const userPizzaOne = new Pizza(userPizzaToppings, userPizzaSize)
-  const pizzaOne = new Pizza(["mushrooms", "sausage"], 3);//sample pizza
-  $("#price-place").html(pizzaOne.price())
-  //$("#price-place").html(userPizzaOne.price())
 })
